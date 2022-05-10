@@ -36,7 +36,14 @@ public class PhoneBookApp {
 			System.out.println("--------------------------------------------");
 			System.out.print("> 메뉴번호: ");
 			
-			int num = sc.nextInt();
+			String ipt = sc.next();
+			int num = 0;
+			
+			try {
+				num = Integer.parseInt(ipt);
+			} catch (NumberFormatException e) {
+
+			}
 			
 			switch(num) {
 				case 1:
