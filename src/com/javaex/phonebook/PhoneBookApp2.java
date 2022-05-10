@@ -60,7 +60,7 @@ public class PhoneBookApp2 {
 					String hp = sc.next();					
 					System.out.print("> 회사전화: ");
 					String company = sc.next();					
-				
+					
 					pList.add(new Person(name, hp, company));
 					update(pList);
 					System.out.println("[등록되었습니다.]");
