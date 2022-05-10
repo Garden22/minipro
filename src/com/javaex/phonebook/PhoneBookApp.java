@@ -56,6 +56,7 @@ public class PhoneBookApp {
 				
 					pList.add(new Person(name, hp, company));
 					update(pList);
+					System.out.println("[등록되었습니다.]");
 					break;
 					
 				case 3:
@@ -65,6 +66,7 @@ public class PhoneBookApp {
 					
 					pList.remove(no-1);
 					update(pList);
+					System.out.println("[삭제되었습니다.]");
 					break;
 					
 				case 4:
@@ -102,13 +104,13 @@ public class PhoneBookApp {
 	public static void printAll(ArrayList<Person> p) {
 		for (int i = 0; i < p.size(); i++) {
 			Person curr = p.get(i);
-			System.out.println(i+1 + "    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
+			System.out.println(i+1 + ".    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
 		}
 	}
 	
 	public static void print(ArrayList<Person> p, int i) {
 		    Person curr = p.get(i);
-			System.out.println(i+1 + "    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
+			System.out.println(i+1 + ".    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
 		
 	}
 	
