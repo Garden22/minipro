@@ -23,7 +23,7 @@ public class PhoneBookApp {
 			String[] person = info.split(",");
 			pList.add(new Person(person[0], person[1], person[2]));
 		}
-		
+				
 		System.out.println("********************************************");
 		System.out.println("*             전화번호 관리 프로그램              *");
 		System.out.println("********************************************");
@@ -55,6 +55,7 @@ public class PhoneBookApp {
 					String company = sc.next();					
 				
 					pList.add(new Person(name, hp, company));
+					update(pList);
 					break;
 					
 				case 3:
@@ -63,6 +64,7 @@ public class PhoneBookApp {
 					int no = sc.nextInt();
 					
 					pList.remove(no-1);
+					update(pList);
 					break;
 					
 				case 4:
@@ -93,16 +95,6 @@ public class PhoneBookApp {
 		System.out.println("*                 감사합니다                  *");
 		System.out.println("********************************************");
 		
-		Writer fw = new FileWriter("./PhoneDB.txt");
-		BufferedWriter bw = new BufferedWriter(fw);
-		
-		for (Person p: pList) {
-			String info = p.getName() + "," + p.getHp() + "," + p.getCompany();
-			bw.write(info);
-			bw.newLine();
-		}
-		
-		bw.close();
 		br.close();
 		sc.close();
 	}
@@ -118,6 +110,19 @@ public class PhoneBookApp {
 		    Person curr = p.get(i);
 			System.out.println(i+1 + "    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
 		
+	}
+	
+	public static void update(ArrayList<Person> person) throws IOException {
+		Writer fw = new FileWriter("./PhoneDB.txt");
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		for (Person p: person) {
+			String info = p.getName() + "," + p.getHp() + "," + p.getCompany();
+			bw.write(info);
+			bw.newLine();
+		}
+		
+		bw.close();
 	}
 
 }
