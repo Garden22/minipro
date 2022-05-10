@@ -101,6 +101,7 @@ public class PhoneBookApp {
 		sc.close();
 	}
 	
+	
 	public static void printAll(ArrayList<Person> p) {
 		for (int i = 0; i < p.size(); i++) {
 			Person curr = p.get(i);
@@ -108,11 +109,13 @@ public class PhoneBookApp {
 		}
 	}
 	
+	
 	public static void print(ArrayList<Person> p, int i) {
-		    Person curr = p.get(i);
-			System.out.println(i+1 + ".    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
+		Person curr = p.get(i);
+		System.out.println(i+1 + ".    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
 		
 	}
+	
 	
 	public static void update(ArrayList<Person> person) throws IOException {
 		Writer fw = new FileWriter("./PhoneDB.txt");
