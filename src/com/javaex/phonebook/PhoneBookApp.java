@@ -93,6 +93,16 @@ public class PhoneBookApp {
 		System.out.println("*                 감사합니다                  *");
 		System.out.println("********************************************");
 		
+		Writer fw = new FileWriter("./src/PhoneDB.txt");
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		for (Person p: pList) {
+			String info = p.getName() + "," + p.getHp() + "," + p.getCompany();
+			bw.write(info);
+			bw.newLine();
+		}
+		
+		bw.close();
 		br.close();
 		sc.close();
 	}
