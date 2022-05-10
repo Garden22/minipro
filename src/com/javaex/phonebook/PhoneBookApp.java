@@ -71,9 +71,14 @@ public class PhoneBookApp {
 					System.out.print("> 번호: ");
 					int no = sc.nextInt();
 					
-					pList.remove(no-1);
-					update(pList);
-					System.out.println("[삭제되었습니다.]");
+					if (no <= pList.size()) {
+						pList.remove(no-1);
+						update(pList);
+						System.out.println("[삭제되었습니다.]");
+					} else {
+						System.out.println("[1부터 " + pList.size() + "까지의 숫자만 입력 가능합니다.]");
+					}
+					
 					break;
 					
 				case 4:
@@ -81,12 +86,18 @@ public class PhoneBookApp {
 					System.out.print("> 이름: ");
 					String search = sc.next();	
 					
+					int cnt = 0;
 					for (int i = 0; i < pList.size(); i++) {
 						Person curr = pList.get(i);
 						
 						if (curr.getName().contains(search)) {
 							print(pList, i);
+							cnt++;
 						}
+					}
+					
+					if (cnt == 0) {
+						System.out.println("[\"" + search + "\"(으)로 시작하는 검색 결과가 없습니다." + "]");
 					}
 					break;
 					
