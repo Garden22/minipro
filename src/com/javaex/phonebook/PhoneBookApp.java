@@ -10,7 +10,7 @@ public class PhoneBookApp {
 		Scanner sc = new Scanner(System.in);
 		ArrayList<Person> pList = new ArrayList<>();
 
-		Reader fr = new FileReader("./src/PhoneDB.txt");
+		Reader fr = new FileReader("./PhoneDB.txt");
 		BufferedReader br = new BufferedReader(fr);
 				
 		while (true) {
@@ -85,15 +85,15 @@ public class PhoneBookApp {
 					
 				default:
 					System.out.println("[다시 입력해 주세요.]");
-										
 			}
 		}
+		
 		System.out.println();
 		System.out.println("********************************************");
 		System.out.println("*                 감사합니다                  *");
 		System.out.println("********************************************");
 		
-		Writer fw = new FileWriter("./src/PhoneDB.txt");
+		Writer fw = new FileWriter("./PhoneDB.txt");
 		BufferedWriter bw = new BufferedWriter(fw);
 		
 		for (Person p: pList) {
