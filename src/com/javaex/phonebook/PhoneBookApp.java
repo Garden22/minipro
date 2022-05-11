@@ -104,8 +104,7 @@ public class PhoneBookApp {
 	
 	public static void printAll(ArrayList<Person> p) {
 		for (int i = 0; i < p.size(); i++) {
-			Person curr = p.get(i);
-			System.out.println(i+1 + ".    " + curr.getName() + "    " + curr.getHp() + "    " + curr.getCompany());
+			print(p, i);
 		}
 	}
 	
